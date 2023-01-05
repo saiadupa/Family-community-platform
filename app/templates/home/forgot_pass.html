@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Forgot Password{% endblock title %}
+
+{% block content %}
+
+    <h1>Forgot password</h1>
+    <div>
+    
+        <label>Your registered number:</label>
+        <input type="text" id="number-for-otp">
+        <button id="verify-number">Get OTP</button>
+        <br>
+        <label>Enter OTP sent your mobile number:</label>
+        <input type="text" id="otp-field" disabled>
+        <button id="otp-submit" disabled>Procced</button>
+    
+    </div>
+
+{% endblock content %}

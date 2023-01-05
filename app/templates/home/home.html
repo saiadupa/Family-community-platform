@@ -1,0 +1,169 @@
+{% extends "base.html" %} 
+
+{% block title %}Home{% endblock %}
+
+{% block basecontent %}
+
+<nav class="navb">
+    <div >
+      <a class="logo" href="#myPage">New kulavruksh</a>
+    </div>
+    <div class="menu-list" id="myNavbar">
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#family-tree">Family tree</a></li>
+        <li><a href="#Login">Login</a></li>
+        <li><a href="#sign-up">Sign-up</a></li>
+        <li><a href="#contact" class="special-link">CONTACT US</a></li>
+      </ul>
+    </div>
+</nav>
+<div id="Home" class="fluid">
+  <div class="row background-change">
+    <div class="col-2 rich-text-box">
+      <div class="rich-text"><h2>We will help you to Find your family from root</h2></div>
+      <br>
+      <button class="btn special-btn" >Get in Touch</button>
+    </div>
+    <div class="col-2">
+      <img src="static\images\indian-family-celebrating-diwali-fesitval-lights-traditional-sari-lighting-oil-lamp-deepavali-home-little-girl-58687517.jpg"  width="460" height="345">
+    </div>
+  </div>
+</div>
+
+<div id="about" class="fluid">
+  <div class="text-center">
+    <h2>About Us</h2>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+    </div>
+    <div class="col-2">
+      <img src="static/images/wp2864959-happy-family-hd-wallpaper.jpg">
+    </div>
+  </div>
+</div>
+
+<div class="fluid">
+  <div class="text-center">
+    <h2>Our Value</h2>
+  </div>
+  <div class="row background-change">
+    <div class="col-2">
+      <img src="static\images\wp2864858-happy-family-hd-wallpaper.jpg">
+    </div>
+    <div class="col-2">
+      <h4><strong>MISSION:</strong></h4>
+      <p>Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
+      <h4><strong>VISION:</strong></h4>
+      <p>Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+<div id="family-tree" class="fluid">
+  <div class="fluid-2">  
+  <div class="text-center">
+    <h2>Family Tree</h2>
+  </div>
+    <h4>What we offer?</h4>
+    <br>
+    <p>A family tree plays an important role in our life. It shows all the family members in a chart with the relations. Here we will tell you why a family tree is important for our children.</p>
+    <p>A family tree is one of the best tools to find out our family’s roots. There are so many best genealogy software or websites that are used for making a family tree. When you start creating a family tree then you get more information about your family and once you create an interest in making a family tree then you can easily know about your origin.</p>
+  </div>
+</div>
+
+
+<div id="Login" class="fluid">
+  <div class="text-center">
+    <h2>Login</h2>
+  </div>
+  <div class="background-change form-box">
+    <form method="post">
+      <div class="form-input">
+        <p>Email address:</p>
+        <input type="email" name="email" placeholder="Enter email">
+      </div>
+      <div class="form-input">
+        <p>Password</p>
+        <input type="password" name="pswd" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div>
+        <a href="/user/forgotpassword" style="color:black">Forgot password</a>
+      </div>
+      <button type="submit" class="btn login_btn" value="Login">Login</button>
+      <p class="message">Not registered? <a href="#sign-up"> Register Now!</a></p>
+  </div>
+</form><br>
+
+
+<div id="sign-up" class="fluid">
+  <div class="text-center">
+    <h2>Sign Up</h2>
+  </div>
+  <div class="form-box">
+    <form action="/signup" method="post">
+      <div class="form-input">
+          <p for="Sur name">Sur Name</p>
+          <input type="text" name="s_name" placeholder="Enter your sur name">
+      </div>
+      <div class="form-input">
+          <p for="First name">First Name</p>
+          <input type="text" name="f_name" placeholder="Enter your first name">
+      </div>
+      <div class="form-input">
+          <p>Last Name</p>
+          <input type="text" name="l_name" placeholder="Enter your last name">
+      </div>
+      <div class="form-input">
+        <p>Phone Number</p>
+        <input type="text" name="p_no" placeholder="Enter your phone number">
+    </div>
+      <div class="form-input">
+        <p>Email address</p>
+        <input type="email" name="email" placeholder="Enter email">
+        <small>We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-input">
+        <p>Password</p>
+        <input type="password" name="pswd" placeholder="Password">
+      </div>
+      <button type="submit" class="btn login_btn" value="Sign Up">sign up</button>
+    </form>
+  </div>
+</div>
+
+
+<div id="contact" class="fluid">
+  <div class="text-center">
+    <h2>Contact Us</h2>
+  </div>
+  <div class="row background-change">
+    <div class="col-2">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p>Chicago, US</p>
+      <p>+00 1515151515</p>
+      <p>myemail@something.com</p>
+    </div>
+    <div class="col-2">
+      <div class="form-box">
+        <form action="/contact"method="post">
+          <div class="form-input">
+            <input name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="form-input">
+            <input name="email" placeholder="Email" type="email" required>
+          </div>
+          <textarea name="comments" placeholder="Message" rows="5"></textarea><br>
+          <button type="submit"class="btn login_btn" value="Send" >submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock basecontent %}

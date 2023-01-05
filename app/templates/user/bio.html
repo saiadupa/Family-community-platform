@@ -1,0 +1,34 @@
+{% extends "user_base.html" %}  
+
+{% block user_content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+      <p style='color:black' class='success_message'>{{ message }}</p>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<section class="background-change form-box">
+    <div class=" reveal fade-bottom">
+      <div class="text-">
+        
+            <div class="banner">
+                <h1>My Biography:</h1>
+            </div>
+            <form method="post" class="notes" enctype="multipart/form-data">
+                <textarea  class="notes" name="bio" placeholder="Write  your  story....">
+                  {% if bio %}
+                    {{ bio }}
+                  {% endif %}
+                </textarea>
+                <button class="btn login_btn" type='submit' value="Submit">Submit</button>
+            </form>
+      </div>
+    </div>
+</section>
+
+{% endblock user_content %}

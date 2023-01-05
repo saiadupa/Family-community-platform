@@ -1,0 +1,55 @@
+{% extends "user_base.html" %}  
+
+{% block user_content %}
+
+
+{% if user %}
+<html>
+<head>
+    <section class="background-change form-box">
+        <div class=" reveal fade-right">
+            <div class="text-">
+<body>
+    <div class="banner">
+        <h1>Contact us</h1>
+      </div>
+<form method="post" class="">
+    <h1>Quick Inquiry </h1>
+
+    <div class="form-group">
+        <label for="First name">First Name</label>
+        <input type="text" class="form-control" name="f_name" placeholder="Enter your first name">
+    </div>
+    <div class="form-group">
+        <label for="Last name">Last Name</label>
+        <input type="text" class="form-control" name="l_name" placeholder="Enter your last name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="Contact number">Contact number</label>
+        <input type="text" class="form-control" name="number" placeholder="Enter your Contact number">
+    </div>
+    <div>
+        <label for="Place of Residence">Message/Comment</label><br>
+        <textarea class="DNA" name="message"></textarea>
+    </div>
+    
+    <input type="submit" value="submit">
+  </form>
+</body>
+</div>
+</div>
+</section>
+</html>
+</head>
+
+
+
+
+
+{% endif %}
+
+{% endblock user_content %}

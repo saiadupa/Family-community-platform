@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block links %}
+
+<a class="nav-item nav-link" id="home" href="/">Home</a>
+
+{% endblock links %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+</html>
+
+
+
+<form method="post"><br><br><br><br><br><br>
+    
+    <div class="brand_logo_">
+      <img src="https://wallpapercave.com/uwp/uwp2551748.png" class="brand_logo" alt="Logo">
+    </div>
+    <div class="form-group">
+        <label for="Sur name">Sur Name</label>
+        <input type="text" class="form-control" name="s_name" placeholder="Enter your sur name">
+    </div>
+    <div class="form-group">
+        <label for="First name">First Name</label>
+        <input type="text" class="form-control" name="f_name" placeholder="Enter your first name">
+    </div>
+    <div class="form-group">
+        <label for="Last name">Last Name</label>
+        <input type="text" class="form-control" name="l_name" placeholder="Enter your last name">
+    </div>
+    <div class="form-group">
+      <label for="Phone number">Phone Number</label>
+      <input type="text" class="form-control" name="p_no" placeholder="Enter your phone number">
+  </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="pswd" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <input type="submit" value="submit">
+  </form>
+
+{% endblock content %}

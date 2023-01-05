@@ -1,0 +1,22 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Change Password{% endblock title %}
+
+{% block content %}
+
+    {% if user %}
+    
+    <h1>Change password</h1>
+    <div>
+        <form>
+            <label>Enter your new password:</label>
+            <input type="text" id="newpass">
+            <button id="password-change-submit" value={{ user.id }}>Change Password</button>
+        </form>
+    </div>
+    
+    {% endif %}
+
+{% endblock content %}

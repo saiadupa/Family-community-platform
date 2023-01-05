@@ -1,0 +1,118 @@
+{% extends 'user_base.html' %}
+
+{% block user_content %}
+
+{% if relatives %}
+
+<div class="tree-container">
+{% for rel in relatives %}
+    {% if relatives[rel] %}
+    <div class="layer back-{{ rel }}">
+        {% if rel==0 %}<h2>My Level</h2>{% endif %}
+        {% if rel==1 %}<h2>Parent</h2>{% endif %}
+        {% if rel==2 %}<h2>Grand Parents</h2>{% endif %}
+        {% if rel==3 %}<h2>Great Grand Parents</h2>{% endif %}
+        {% if rel==-1 %}<h2>Children</h2>{% endif %}
+        {% if rel==-2 %}<h2>Grand Children</h2>{% endif %}
+        {% if rel==-3 %}<h2>Great Grand Children</h2>{% endif %}
+        <div class="back">
+        {% for r in relatives[rel] %}
+        {% if user.first_name == r.first_name %}
+            <div class="node-box">
+                <div class="node-options">
+                    <i class="fa-solid fa-user-plus add-relation-click" value={{ r.id }}></i>
+                    <i class="fa-solid fa-trash" value={{ r.id }}></i>
+                    <i class="fa-solid fa-user-pen" value={{ r.id }}></i>
+                </div>
+                <div class="node-content" style="background: rgb(255, 255, 255)">
+                    <div class="node-content-in">
+                        <p>{{ r.first_name }}</p>
+                        <p>Myself</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% if r.gender=='male' %}
+            <div class="node-box">
+                <div class="node-options">
+                    <i class="fa-solid fa-user-plus add-relation-click" value={{ r.id }}></i>
+                    <i class="fa-solid fa-trash" value={{ r.id }}></i>
+                    <i class="fa-solid fa-user-pen" value={{ r.id }}></i>
+                </div>
+                <div class="node-content">
+                    <div class="node-content-in">
+                        <p>{{ r.first_name }}</p>
+                        <p>{{ r.gender }}</p>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="node-box node-border">
+                <div class="node-options">
+                    <i class="fa-solid fa-user-plus add-relation-click" value={{ r.id }}></i>
+                    <i class="fa-solid fa-trash" value={{ r.id }}></i>
+                    <i class="fa-solid fa-user-pen" value={{ r.id }}></i>
+                </div>
+                <div class="node-content">
+                    <div class="node-content-in">
+                        <p>{{ r.first_name }}</p>
+                        <p>{{ r.gender }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+        
+        {% endfor %}
+                
+        </div>
+    </div>
+    
+    
+    {% endif %}
+
+{% endfor %}
+</div >
+<div class="form-box">
+    <div id="add-relation-form" style="display:none">
+        <form>
+            <div class="form-group">
+                <label for="First name">First Name</label>
+                <input type="text" class="form-control" name="f_name" placeholder="Enter your first name">
+            </div>
+            <div>
+                <label for="relation_name">Relation</label>
+                <select name="relation_name">
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="son">Son</option>
+                    <option value="daughter">Daughter</option>
+                    <option value="brother">Brother</option>
+                    <option value="sister">Sister</option>
+                </select>
+            </div>  
+            <div class="form-group">
+            <label for="Date of Birth">Date of birth</label>
+            <input type="date" class="form-control" name="dob">
+            </div>
+            <div class="form-group">
+                <label for="Place of Birth">Place of birth</label>
+                <input type="text" class="form-control" name="palce_of_birth">
+            </div>
+            <div>
+                <label for="Gender">Gender:</label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div> 
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock user_content %}
+

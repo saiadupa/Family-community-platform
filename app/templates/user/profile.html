@@ -1,0 +1,205 @@
+{% extends "user_base.html" %}  
+
+{% block user_content %}
+
+{% block title %}User - Profile{% endblock title %} 
+
+<div class="banner">
+    <h1>Welcome</h1>
+</div>
+  <section>
+    <div class=" reveal fade-bottom">
+      <div class="text-">
+        <div class="text-box">
+          <h3>Find your family...</h3>
+          <p>
+As 21st century has changed the world we live in, the world is more connected than ever before and is one small village. People from one end of the world travel across the globe and live in different places of the world, to meet their aspiration, for work, passion, hobbies and any other reasons. There are many social networking platforms to stay connected with friends. It is equally important to stay connected with one’s family all the more, for the millennials and young generations who are global citizens and far from home land, to stay connected with family, origin and roots. Family roots, customs, culture define who we are With this endeavor to keep all connected, it is our effort to bring this platform to you.. We bring you VD to build and your family tree and connect with your family, know your ancestors, live your customs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% if done %}
+
+{% if person %}
+<section class="background-change form-box">
+    <div class=" reveal fade-bottom">
+      <div class="text-">
+<div class="banner">
+    <h1>Profile</h1>
+</div>
+<div class="">
+<div class="background-change form-box">
+    <form action="/user/edit_personal" method="post">
+        <h2>Your personal Details are:</h2>
+        <input type="text" name="id_" value="{{ person.id }}" style="display: none;">
+        <p style="color: Black">sur_name: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ person.sur_name }}<input type="text" name="esur_name" class="ps_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">first_name:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ person.first_name }}<input type="text" name="efirst_name" class="ps_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">last_name:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ person.last_name }}<input type="text" name="elast_name" class="ps_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">email: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ person.email }}<input type="text" name="eemail" class="ps_details" style="display:none" placeholder="edit here"></p>
+        <input id="ps_save" type="submit" value="Save Changes">
+    </form><br>
+    <button id="ps_details_cancel" style="display:none" onclick="editPersonalCancel()">Cancel</button>
+</div>
+<br>
+</div>
+<div>
+    <button id="edit-personal-btn" class="btn login_btn" onclick="editPersonalDetails()">Edit Personal details</button>
+</div>
+</div>
+</section>
+{% endif %}
+{% if profile %}
+<section class="background-change form-box">
+    <div class=" reveal fade-bottom">
+      <div class="text-">
+<div>
+    <form action="/user/edit_profile" method="post">
+        <h2>Your profile Details are:</h2>
+        <input type="text" name="id_" value="{{ profile.id }}" style="display: none;">
+        <p style="color: Black">gotra: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.gotra }}<input type="text" name="egotra" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">religion:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ profile.religion }}<input type="text" name="ereligion" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">caste: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.caste }}<input type="text" name="ecaste" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">sub_caste: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.sub_caste }}<input type="text" name="esub_cast" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">mother_tongue: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.mother_tongue }}<input type="text" name="emother_tongue" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">native_region:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ profile.native_region }}<input type="text" name="enative_region" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">date_of_birth: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.date_of_birth }}<input type="text" name="edate_of_birth" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">place_of_birth: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.place_of_birth }}<input type="text" name="eplace_of_birth" class="p_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">gender:</p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ profile.gender }}<input type="text" name="egender" class="p_details" style="display:none" placeholder="edit here"></p>
+        <input type="submit" class="p_details" value="Save Changes">
+    </form>
+    <button id="p_details_cancel" class="btn login_btn" onclick="editprofileCancel()" style="display:none">Cancel</button>
+</div>
+<br>
+</div>
+<div>
+    <button id="edit-profile-btn" class="btn login_btn" onclick="editprofileDetails()">Edit Profile details</button>
+</div>
+</div>
+</section>
+{% endif %}
+
+{% if family %}
+<section class="background-change form-box">
+    <div class=" reveal fade-bottom">
+      <div class="text-">
+<div>
+    <h2>Your family Details are:</h2>
+    <form action="/user/edit_family" method="post">
+        <input type="text" name="id_" value="{{ family.id }}" style="display: none;">
+        <p style="color: Black">father_name: </p><p style="border-radius: 10px; background: beige; padding: 10px;">{{ family.father_name }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">mother_name:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.mother_name }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">grand_father:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.grand_father }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">grand_mother:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.grand_mother }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">great_grand_father:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.great_grand_father }}<input  type="text"class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">great_grand_mother:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.great_grand_mother }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">spouse_name:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.spouse_name }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <p style="color: Black">kids:</p><p style="border-radius: 10px; background: beige; padding: 10px;"> {{ family.kids }}<input type="text" class="f_details" style="display:none" placeholder="edit here"></p>
+        <input type="submit" class="f_details" value="Save Changes">
+    </form>
+    <button id="f_details_cancel" class="btn login_btn" style="display:none" onclick="editfamilyCancel()">Cancel</button>
+</div>
+</div>
+<div>
+    <button id="edit-family-btn" class="btn login_btn" onclick="editfamilyDetails()">Edit Family details</button>
+</div>
+</div>
+</div>
+</section>
+{% endif %}
+
+{% else %}
+<style>
+    .grid- {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 12px;
+}       
+</style>
+<section class="background-change form-box">
+    <div class=" reveal fade-bottom">
+      <div class="text-">
+<form method="post" class= enctype="multipart/form-data">
+            <h2>Personal Details:</h2>
+            <div class="grid-" >
+            <div>
+                <label for="Gotra">Gotra:</label>
+                <input type="text" class="form-control" name="gotra" placeholder="Enter your Gotra">
+            </div>
+            <div>
+                <label for="Religion">Religion:</label>
+                <input type="text" class="form-control" name="religion" placeholder="Enter your Religion">
+            </div>
+            <div>
+                <label for="Cast">Caste:</label>
+                <input type="text" class="form-control" name="caste" placeholder="Enter your Caste">
+            </div>
+            <div>
+                <label for="Sub cast">Sub Caste:</label>
+                <input type="text" class="form-control" name="sub_caste" placeholder="Enter your Sub Caste">
+            </div>
+            <div>
+                <label for="Native town">Native Place:</label>
+                <input type="text" class="form-control" name="native_town" placeholder="Enter your Native Place">
+            </div>
+            <div>
+                <label for="Mother tongue">Mother tongue:</label>
+                <input type="text" class="form-control" name="mother_tongue" placeholder="Enter your Mother tongue">
+            </div>
+            <div>
+                <label for="Date of Birth">Date of Birth:</label>
+                <input type="date" class="form-control" name="dob" placeholder="Enter your Date of Birth">
+            </div>  
+            <div>
+                <label for="Place of Birth">Place of Birth:</label>
+                <input type="text" class="form-control" name="place_of_birth" placeholder="Enter your Place of Birth">
+            </div>  
+            <div>
+                <label for="Gender">Gender:</label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>           
+            <div>
+                <label for="Father name">Father Name:</label>
+                <input type="text" class="form-control" name="father_name" placeholder="Enter your Father Name">
+            </div>
+            <div>
+                <label for="Mother name">Mother name:</label>
+                <input type="text" class="form-control" name="mother_name" placeholder="Enter your Mother name">
+            </div>
+            <div>
+                <label for="Grand Father name">Grand Father Name:</label>
+                <input type="text" class="form-control" name="grand_father" placeholder="Enter your Grand Father Name">
+            </div>
+            <div>
+                <label for="Grand Mother name">Grand Mother name:</label>
+                <input type="text" class="form-control" name="grand_mother" placeholder="Enter your Grand Mother name">
+            </div>
+            <div>
+                <label for="Spouse name">Spouse Name:</label>
+                <input type="text" class="form-control" name="spouse_name" placeholder="Enter your Spouse name">
+            </div>
+        </div>     
+                <label for="Kids">Kids:</label>
+                <input type="text" class="grid-" name="kid" placeholder="Enter name of Kid 1">
+                <input type="text" class="grid-" name="kid" placeholder="Enter name of Kid 2">
+                <input type="text" class="grid-" name="kid" placeholder="Enter name of Kid 3">
+                <input type="text" class="grid-" name="kid" placeholder="Enter name of Kid 4"><br>
+            
+        </div><br>
+    <div>
+        <button type="submit" class="btn profile_btn">submit</button>
+    </div>
+</form>
+</div>
+</div>
+</section>
+  
+{% endif %}
+
+{% endblock user_content %}

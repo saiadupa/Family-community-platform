@@ -1,0 +1,13 @@
+{% extends 'user_base.html' %}
+
+{% block user_content %}
+<h3>May you know him/her:</h3>
+{% if friend %}
+
+<p style="color:red">Name: {{ friend.sur_name + ' ' + friend.first_name+' '+friend.last_name }}</p>
+<p style="color:red">Phone number: {{ friend.phone_number }}</p>
+
+<button id="accept-friend" value={{ friend.id }}>Accept request</button>
+
+{% endif %}
+{% endblock user_content %}

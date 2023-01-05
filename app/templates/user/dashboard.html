@@ -1,0 +1,53 @@
+{% extends "user_base.html" %}  
+
+{% block user_content %}
+<section class="background-change form-box">
+    <div class=" reveal fade-right">
+        <div class="text-">
+<div class="">
+    <div class="search-">
+        <div class="search-wrapper">
+            <div class="search-bar">
+                <input id="search" type="text" placeholder="Search...">
+                <div id="results">
+                    
+                </div>
+            </div>
+            <button id="final-search">Search</button>
+        </div>
+    </div>
+    {% if user %}
+    
+    <div class="row">
+        <div class="col-2">
+            <h3>Friends</h3>
+            {% if friends %}
+            <ul>
+                {% for f in friends %}
+                    <li style="color:white" value={{f.get('id')}}>{{ f.get('name') }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style="color:white">No friends found!!</p>
+            {% endif %}
+        </div>
+        <div class="col-2">
+            <h3>Requests</h3>
+            {% if requests %}
+            <ul>
+                {% for f in requests %}
+                    <li style="color:white" value={{f.get('id')}}>{{ f.get('name') }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style="color:white">No requests found!!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+{% endif %}
+
+{% endblock user_content %}
